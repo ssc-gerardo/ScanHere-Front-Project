@@ -1,0 +1,20 @@
+.logo-opaque {
+  opacity: 0.15;
+  filter: grayscale(90%);
+  width: 3rem;
+}
+.conteiner-stiker {
+  /* background-color:#615b73; */
+  border: 1px solid #756f87;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.container-blue{
+  border: 1px solid #4374ED;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.logo-album{
+  width: 3rem;
+}

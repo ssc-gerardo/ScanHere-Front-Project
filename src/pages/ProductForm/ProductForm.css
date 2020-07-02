@@ -1,0 +1,18 @@
+.formScanHere{
+   
+    border-radius: 10px;
+   display: flex;
+   flex-wrap: wrap;
+   align-content: space-between;
+   
+}
+.productRegister{
+    margin-bottom: 20px ;
+    
+}
+.form-comtrol{
+    border-radius: 10px;
+}
+.button{
+    width: auto;
+}

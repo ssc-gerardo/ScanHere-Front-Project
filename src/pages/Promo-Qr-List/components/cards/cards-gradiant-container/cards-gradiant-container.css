@@ -1,0 +1,8 @@
+.card-gradiant-container{
+  padding: 8px;
+  border-radius: 6px;
+  border:1px solid #4374ED;
+  border-image-slice:1 ;
+  min-width: fit-content;
+  }
+  

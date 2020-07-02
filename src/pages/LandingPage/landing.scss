@@ -1,0 +1,223 @@
+
+$myButton:#53C0C4;
+$breakpoint-md: 1023px;
+$background-ligth :rgba(255, 255, 255, 0.287);
+$background-dark :  #18181A;
+$blue-boton: #7864E9;
+body {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    color: #292D34;
+    background-color:$background-ligth ;
+    // background-color: #1C2230;
+    font-family: monospace;
+    font-size: larger;
+    h5{
+      font-size: 30;
+    }
+}
+.sign{
+  border-radius: 5px;
+  background-color: $blue-boton;
+  
+  //border: 1px solid #4374ED;
+  padding: 0px;
+}
+.log{
+  border-radius: 5px;
+  //border: 1px solid #9226C5;
+  padding: 0px;
+}
+/***MENU**/
+
+header {
+    img {
+        margin: 10px;
+        width: 160px;
+      .img{
+            max-width: 11%;
+            height: auto;
+        }
+        
+    }
+    .col-6 {
+      .text{
+            font-size: 15px;
+
+      }
+      .d-flex {
+        a {
+          color: #292D34;
+          padding-top: 20px;
+      }
+    }
+}
+    
+        
+}
+.graph-dash{
+  img{
+  width: 18%;
+  }
+}
+
+/**BANNER**/
+.fondo{
+  .banner {
+    //background-image: url(./images/bannerbk.svg);
+    padding-top: 100px;
+    
+    background-position: 60% 50%;
+    background-size: 500px;
+    background-repeat: no-repeat;
+    text-align: center;
+    .img {
+      img {
+          
+          width: 20%;
+      }
+    } 
+  }
+}
+.Administra{
+  margin-top: 50px;
+}
+/**SERVICES**/
+/*MOBILE SERVICES*/
+div.services-container{
+  padding-top: 30px;
+    div.row{
+      padding-top: 30px;
+        div.services{
+            h3 {
+              
+                //background-color: #181F2B;
+                color: #4374ED;
+                margin-top: 2vw;
+                text-align: center;
+            }
+            p{
+                //background-color: #181F2B;
+                margin-top: 2vw;
+                text-align: center;
+            }
+            img{
+              height: 170px;
+              width: 180px;
+            }
+            //background-color: #181F2B;
+            //margin-top: 10vw;
+            margin-bottom: 10vw;
+
+        }
+        //background-color: #18181A ;
+        //background-color: #181F2B;
+    }
+    background-color: $background-ligth ;
+    //
+    //background-color: #181F2B;
+    // margin-top: 30vw;
+    // margin-bottom: 20vw;
+}
+/*END MOBILE SERVICES*/
+/**DESKTOP SERVICES**/
+.info{
+  img{
+    max-width: 40%;
+    height: auto;
+  }
+  .admin {
+    padding-bottom: 10vw;
+    padding-top: 10vw;
+  }
+  //padding: 5vw;
+}
+.info2{
+  background-color: $background-ligth ;
+  //background-color: #181F2B;
+  img{
+    max-width: 40%;
+    height: auto;
+  }
+  .user{
+    padding-bottom: 10vw;
+    padding-top: 10vw;
+  }
+  //padding: 5vw;
+}
+
+.footer{
+  background-color: rgb(16, 21, 29);
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  .contactos{
+    .iconos {
+      margin-top: 2vw;
+    }
+    .link{
+      margin-top: 2vw;
+    }
+    // margin-top: 3vw;
+  }
+  .redes{
+    margin-top: 3vw;
+  }
+}
+@media only screen and (max-width:$breakpoint-md) {
+  header{
+    font-size: 15px;
+  }
+  .info2{
+    img{
+      padding-top: 10vw;
+      max-width: 50%;
+      height: auto;
+    }
+    .my-auto{
+      padding-top: 5vw;
+    }
+  }
+  .graph-dash{
+    img{
+    width: 50%;
+    }
+  }
+  .info{
+    img{
+      max-width: 50%;
+      height: auto;
+    }
+    .my-auto{
+      padding-top: 5vw;
+    }
+  }
+  .fondo{
+  .banner {
+    .img {
+      img {
+          width: 50%;
+      }
+    }
+  }
+  }
+
+  .footer{
+    background-color: rgb(16, 21, 29);
+    padding-top: 10vw;
+    padding-bottom: 10vw;
+    .contactos{
+      .iconos {
+        margin-top: 3vw;
+      }
+      .link{
+        margin-top: 3vw;
+      }
+      // margin-top: 3vw;
+    }
+    .redes{
+      margin-top: 3vw;
+    }
+  }
+
+}
