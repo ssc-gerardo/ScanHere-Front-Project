@@ -51,6 +51,7 @@ export default class QrGenerator extends React.Component {
         <Redirect to='/login' />
       )
     }
+    const siteUrl = "http://localhost:3000/"
     const myObj = { id: uniqid(), sku: this.state.selectedProduct }
     const objAsString = JSON.stringify(myObj)
     const encriptedObj = btoa(objAsString)
@@ -66,47 +67,18 @@ export default class QrGenerator extends React.Component {
           </select>
         </form>
         <div className='qr'>
-               {
-                this.state.selectedProduct ? (
-                  <>
-                    <QRCode includeMargin='true' value={encriptedObj} size={170} />
-                  </>
-                ) : (
-                    <h1>Codigo Qr</h1>
-                  )
-              }
-            </div>
+          {
+          this.state.selectedProduct ? (
+            <>
+              <QRCode includeMargin='true' value={siteUrl+encriptedObj} size={170} />
+            </>
+          ) : (
+              <h1>Codigo Qr</h1>
+            )
+          }
+        </div>
         <NavBarAdmin />
       </div>
-      // <div>
-      //   <Header />
-      //   <div className='row '>
-      //     <div className='col-lg-6 d-flex justify-content-center'>
-      //       <div className='products'>
-      //         <select className='form-control form-control-sm' id='selectOptios' onChange={this.handleInput} value={this.state.value}>
-      //           <option value='none' selected disabled hidden>
-      //             Selecciona una Opción
-      //           </option>
-      //           {this._renderProducts()}
-      //         </select>
-      //       </div>
-      //     </div>
-      //     <div className='col-lg-4'>
-      //       <div className='qr'>
-      //         {
-      //           this.state.selectedProduct ? (
-      //             <>
-      //               <QRCode includeMargin='true' value={encriptedObj} size={170} />
-      //             </>
-      //           ) : (
-      //               <h1>Codigo Qr</h1>
-      //             )
-      //         }
-      //       </div>
-      //     </div>
-      //   </div>
-      //   <NavBarAdmin />
-      // </div>
     )
   }
 }
