@@ -14,15 +14,36 @@ export default class AlbumQr extends Component {
         numberOfScans: 0
       },
       promotionId: params.promotionId,
-      scans: 0
+      scans: 0,
+      allowBurnQr: false
     }
     this.setScans = this.setScans.bind(this)
+    this.handleButton = this.handleButton.bind(this)
   }
 
   setScans (scans) {
     this.setState({
       scans
     })
+  }
+
+  componentWillMount () {
+    const token = localStorage.getItem('authUserToken')
+    const qr = localStorage.getItem('qrData')
+    if (qr) {
+      // peticion hacia promociones de un solo producto
+      api.getPromotionsByQr(token, qr)
+        .then((promotions) => {
+          const promotionsIds = promotions.map(promo => {
+            return promo._id
+          })
+          if (promotionsIds.includes(this.state.promotionId)) {
+            this.setState({
+              allowBurnQr: true
+            })
+          }
+        })
+    }
   }
 
   componentDidMount () {
@@ -35,6 +56,30 @@ export default class AlbumQr extends Component {
           })
         })
     }
+  }
+
+  handleButton (event) {
+    event.preventDefault()
+    const token = localStorage.getItem('authUserToken')
+    const qr = localStorage.getItem('qrData')
+    const promotionId = this.props.match.params.promotionId
+    api.postScan(qr, promotionId, token)
+      .then((scan) => {
+        this.setState({
+          scan
+        })
+        localStorage.removeItem('qrData')
+        window.location.reload()
+      })
+      .catch((error) => {
+        this.setState({
+          error: {
+            hasError: true,
+            message: error.message
+          }
+        })
+        localStorage.removeItem('qrData')
+      })
   }
 
   render () {
@@ -66,6 +111,13 @@ export default class AlbumQr extends Component {
           totalScans={this.state.promotion.numberOfScans}
           promotionName={this.state.promotion.prize}
         />
+        {
+          this.state.allowBurnQr && (
+            <button type='button' className='m-3 px-4 button py-2' onClick={this.handleButton}>
+              Registrar QR
+            </button>
+          )
+        }
         <AlbumLayout
           setScans={this.setScans}
           promotionId={this.state.promotionId}
