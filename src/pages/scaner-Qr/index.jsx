@@ -24,7 +24,7 @@ export default class ScanQr extends Component {
 
   handleScan (data) {
     if (data) {
-      return this.setState({
+      this.setState({
         result: data
       }, () => {
         const token = localStorage.getItem('authUserToken')
