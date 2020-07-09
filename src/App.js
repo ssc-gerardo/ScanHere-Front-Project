@@ -20,6 +20,7 @@ import AlbumQr from './pages/Album-QR'
 import ScanQr from './pages/scaner-Qr'
 import ResetPasswordPage from './pages/ResetPassword'
 import ChangePasswordPage from './pages/ChangePasword'
+import RedirectQr from './pages/redirect-qr'
 
 function App () {
   return (
@@ -60,6 +61,7 @@ function App () {
           </Route>
           <Route exact path='/album-qr/:promotionId' component={AlbumQr} />
           <Route exact path='/album-qr/:promotionId/scan-qr' component={ScanQr} />
+          <Route exact path='/qr/:qrhash' component={RedirectQr} />
         </Switch>
       </div>
     </Router>
