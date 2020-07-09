@@ -51,7 +51,7 @@ export default class QrGenerator extends React.Component {
         <Redirect to='/login' />
       )
     }
-    const siteUrl = "http://localhost:3000/"
+    const siteUrl = "http://localhost:3000/qr/"
     const myObj = { id: uniqid(), sku: this.state.selectedProduct }
     const objAsString = JSON.stringify(myObj)
     const encriptedObj = btoa(objAsString)
