@@ -18,6 +18,8 @@ import SignIn from './pages/SignIn'
 import Promos from './pages/Promos'
 import AlbumQr from './pages/Album-QR'
 import ScanQr from './pages/scaner-Qr'
+import ResetPasswordPage from './pages/ResetPassword'
+import ChangePasswordPage from './pages/ChangePasword'
 
 function App () {
   return (
@@ -29,6 +31,13 @@ function App () {
           </Route>
           <Route exact path='/login'>
             <Login />
+          </Route>
+          <Route exact path="/account/reset-password" >
+            <ResetPasswordPage/>
+          </Route>
+          {/* <Route path="/account/change-password/:hash" component={ChangePasswordPage} /> */}
+          <Route path="/account/change-password"  >
+            <ChangePasswordPage/>
           </Route>
           <Route exact path='/promo-list'>
             <PagePromoList />
